@@ -1,38 +1,210 @@
-.App {
+body {
+  font-family: Open Sans, Sans Serif;
+}
+
+.header {
   text-align: center;
+  margin-top: 1.5rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#board {
+/*   border: 1px solid black; */
+  margin: 0 auto;
+  /*Adjust #board width and .square height for responsive*/
+  width: 340px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.square {
+  /*Adjust #board width and .square height for responsive*/
+  height: 105px;
+  margin-bottom: 1rem;
+  
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  
+  cursor: pointer;
+  
+  background-color: #cccccc;
+  border-radius: 25px;
+}
+  .square:hover {
+    background-color: #808080;
+  }
+  /*For filled squares*/
+  .red-square {
+    background-color: #f44747; /* #ff4d4d; */
+  }
+  .blue-square {
+    background-color: #2886f0; /* dodgerblue;*/
+  }
+ /*Made seprate bc X and O squares use different colors*/
+  .hover-x:hover {
+    background-color: #f44747;
+  }
+  .hover-o:hover {
+    background-color: #2886f0;
+  }
+  .disabled-square {
+    pointer-events: none;
+  }
+  .locked-square-start {
+    pointer-events: none;
+    filter: brightness(50%);
+  }
+
+.marker-span {
+  font-size: 4.6rem;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#mode-btn-wrapper {
+  margin: 0 auto;
+  margin-top: 3rem;
+  text-align: center;
+  margin-bottom: 3rem;
+/*   display: flex; */
+/*   flex-direction: row; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  button {
+    height: 50px;
+    width: 120px;
+    margin: 0 auto;
+    margin-left: 0.5rem;
+    
+    border: none;
+    border-radius: 10px;
+    
+    font-size: 1.1rem;
+    background-color: #d9d9d9;
+    color: black;
   }
-  to {
-    transform: rotate(360deg);
+    button:hover {
+      cursor: pointer;
+      background-color: black;
+      color: white;
+    }
+
+    .active-btn {
+      background-color: black;
+      color: white;
+    }
+    .disabled-btn {
+      pointer-events: none;
+    }
+    /* Reset default btn styling */
+    button::-moz-focus-inner,
+    input::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }
+
+
+
+
+
+/* Overlay that blocks and dims the screen */
+.overlay {
+  position: fixed; 
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+  
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+}
+  /* Modal Content/Box */
+  /* The actual box with text and buttons */
+  .overlay-content-wrapper {
+    width: 100%;
+    height: 190px;
+    margin: 0 auto;
+    margin-top: 230px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: white;
+    border-radius: 20px;
+  }
+    
+    #overlay-btn-wrapper {
+      /* Buttons are column on mobile */
+      display: flex;
+      flex-direction: column;
+    }
+      .overlay-btn {
+        margin-top: 1rem; /* Distance from top screen; center w/ board*/
+        width: 100px;
+        font-weight: 600;
+        color: black;
+      }
+
+    .overlay-span {
+      white-space: nowrap; /* Prevent 'play again' from going to next line */
+    }
+/* Hides overlay */
+.hidden {
+  display: none;
+}
+
+
+
+/* Media Queries */
+@media only screen and (min-width: 400px) {
+  #board {
+  /*Adjust #board width and .square height for responsive*/
+    width: 380px;
+}
+
+  .square {
+  /*Adjust #board width and .square height for responsive*/
+    height: 115px;
   }
 }
+/* Laptop+ */
+@media only screen and (min-width: 1000px) {
+  #board {
+    width: 390px;
+  }
+
+  .square {
+    height: 115px;
+  }
+  
+  .overlay-content-wrapper {
+    margin-top: 250px;
+  }
+    /*Make buttons horizontal on laptops+ */
+    #overlay-btn-wrapper {
+      display: flex;
+      flex-direction: row;
+    }
+      .overlay-btn {
+        height: 55px;
+        margin-top: 0;
+      }
+}
+
+
+
+
+
+
+
+/* 
+Notes:
+To adjust square size for responsiveness:
+- Adjust #board width and .square height 
+*/
