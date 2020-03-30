@@ -22,9 +22,13 @@ body {
   height: 105px;
   margin-bottom: 1rem;
   
+  display: -webkit-box;
+  
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
   
   cursor: pointer;
   
@@ -53,7 +57,8 @@ body {
   }
   .locked-square-start {
     pointer-events: none;
-    filter: brightness(50%);
+    -webkit-filter: brightness(50%);
+            filter: brightness(50%);
   }
 
 .marker-span {
@@ -128,10 +133,16 @@ body {
     margin: 0 auto;
     margin-top: 230px;
     
+    display: -webkit-box;
+    
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    -webkit-box-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
     
     font-weight: 600;
     font-size: 1.6rem;
@@ -141,8 +152,11 @@ body {
     
     #overlay-btn-wrapper {
       /* Buttons are column on mobile */
+      display: -webkit-box;
       display: flex;
-      flex-direction: column;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+              flex-direction: column;
     }
       .overlay-btn {
         margin-top: 1rem; /* Distance from top screen; center w/ board*/
@@ -188,8 +202,11 @@ body {
   }
     /*Make buttons horizontal on laptops+ */
     #overlay-btn-wrapper {
+      display: -webkit-box;
       display: flex;
-      flex-direction: row;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+              flex-direction: row;
     }
       .overlay-btn {
         height: 55px;
