@@ -2,6 +2,8 @@
 
 Classic Tic-Tac-Toe game implemented in React with help of Create-React-App.
 
+You can play it here: https://github.com/oschuang/tic-tac-toe_react
+
 ## Features
 
 Includes one-player mode vs. AI, and a two-player mode to play locally with a friend.
