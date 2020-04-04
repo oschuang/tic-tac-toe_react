@@ -1,0 +1,13 @@
+@import "board";
+@import "button";
+@import "board";
+@import "overlay";
+
+body {
+  font-family: Open Sans, Sans Serif;
+}
+
+.header {
+  text-align: center;
+  margin-top: 1.5rem;
+}

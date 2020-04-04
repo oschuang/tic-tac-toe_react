@@ -1,0 +1,40 @@
+#mode-btn-wrapper {
+  margin: 0 auto;
+  margin-top: 3rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  /*   display: flex; */
+  /*   flex-direction: row; */
+}
+
+button {
+  height: 50px;
+  width: 120px;
+  margin: 0 auto;
+  margin-left: 0.5rem;
+
+  border: none;
+  border-radius: 10px;
+
+  font-size: 1.1rem;
+  background-color: #cccccc;
+  color: black;
+}
+button:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
+.active-btn {
+  background-color: black;
+  color: white;
+}
+.disabled-btn {
+  pointer-events: none;
+}
+/* Reset default btn styling */
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
