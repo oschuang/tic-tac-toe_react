@@ -2,7 +2,7 @@
 
 Classic Tic-Tac-Toe game implemented in React with help of Create-React-App.
 
-You can play it here: https://github.com/oschuang/tic-tac-toe_react
+You can play it here: https://oschuang.github.io/tic-tac-toe_react/
 
 ## Features
 
